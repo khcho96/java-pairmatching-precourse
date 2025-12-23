@@ -14,7 +14,7 @@ public enum Course {
 
     public static Course fromName(String name) {
         return Arrays.stream(values())
-                .filter(constant -> constant.name.equals(name))
+                .filter(course -> course.name.equals(name))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.INVALID_COURSE_ERROR.getErrorMessage()));
     }

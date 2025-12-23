@@ -22,4 +22,8 @@ public class Crews {
     public void addCrew(String name, Course course) {
         crews.get(course).add(Crew.of(name, course));
     }
+
+    public List<Crew> getCrews(Course course) {
+        return new ArrayList<>(crews.get(course));
+    }
 }
