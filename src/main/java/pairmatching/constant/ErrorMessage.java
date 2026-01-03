@@ -8,8 +8,9 @@ public enum ErrorMessage {
     LEVEL_ERROR("잘못된 레벨입니다."),
     MISSION_ERROR("잘못된 미션입니다."),
 
-    INVALID_NAME("없는 학생입니다.")
-    ;
+    INVALID_NAME("없는 학생입니다."),
+
+    MATCHING_FAIL("매칭에 실패했습니다.");
 
     private static final String ERROR_MESSAGE_PREFIX = "[ERROR] ";
     private final String errorMessage;
