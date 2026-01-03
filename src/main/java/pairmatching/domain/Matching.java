@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import pairmatching.constant.Content;
 
 public class Matching {
@@ -34,7 +35,7 @@ public class Matching {
     public boolean pairAlreadyExists(Content keyContent, Pair newPair) {
         List<Content> sameLevelMatching = Arrays.stream(Content.values())
                 .filter(content -> content.getLevel().equals(keyContent.getLevel()))
-                .toList();
+                .collect(Collectors.toList());
 
         for (Content content : sameLevelMatching) {
             List<Pair> pairs = matching.get(content);

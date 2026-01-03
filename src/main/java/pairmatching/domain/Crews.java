@@ -2,6 +2,7 @@ package pairmatching.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import pairmatching.constant.Course;
 import pairmatching.constant.ErrorMessage;
 
@@ -24,10 +25,9 @@ public class Crews {
     }
 
     public List<String> getCrewNames(Course course) {
-        return new ArrayList<>(crews.stream()
+        return crews.stream()
                 .filter(crew -> crew.getCourse().equals(course))
-                .map(Crew::getName)
-                .toList());
+                .map(Crew::getName).collect(Collectors.toList());
     }
 
     public Crew getCrew(String name) {

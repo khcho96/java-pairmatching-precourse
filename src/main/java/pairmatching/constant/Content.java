@@ -22,7 +22,7 @@ public enum Content {
     CONTENT15(Course.FRONTEND, Level.LEVEL4, Mission.IMPROVEMENT),
     CONTENT16(Course.FRONTEND, Level.LEVEL4, Mission.DEPLOYMENT),
 
-    NONE(null, null, null)
+    NONE(Course.NONE, Level.NONE, Mission.NONE)
     ;
 
     private final Course course;

@@ -5,7 +5,8 @@ import java.util.Arrays;
 public enum Course {
 
     BACKEND("백엔드"),
-    FRONTEND("프론트엔드");
+    FRONTEND("프론트엔드"),
+    NONE("");
 
     private final String name;
 

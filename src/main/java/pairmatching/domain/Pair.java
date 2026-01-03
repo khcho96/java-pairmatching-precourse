@@ -2,6 +2,7 @@ package pairmatching.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Pair {
 
@@ -40,6 +41,6 @@ public class Pair {
     public List<String> getCrews() {
         return pair.stream()
                 .map(Crew::getName)
-                .toList();
+                .collect(Collectors.toList());
     }
 }
