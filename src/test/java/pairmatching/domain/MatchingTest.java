@@ -30,7 +30,7 @@ class MatchingTest {
     }
 
     @Test
-    void 매칭_실행_및_각_사람_이전_매칭_여부_확인_비매칭() {
+    void 매칭_실행_및_같은_레벨_미션_이전_매칭_여부_확인_비매칭() {
         Matching matching = Matching.newInstance();
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
@@ -42,12 +42,12 @@ class MatchingTest {
         Crew fourthCrew = Crew.from("라", Course.BACKEND);
         Pair newPair = Pair.of(thirdCrew, fourthCrew);
 
-        assertThat(matching.pairAlreadyExists(Content.CONTENT1, newPair))
+        assertThat(matching.pairAlreadyExists(Content.CONTENT2, newPair))
                 .isFalse();
     }
 
     @Test
-    void 매칭_실행_및_각_사람_이전_매칭_여부_확인_매칭() {
+    void 매칭_실행_및_같은_레벨_미션_이전_매칭_여부_확인_매칭() {
         Matching matching = Matching.newInstance();
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
@@ -60,7 +60,7 @@ class MatchingTest {
         Crew fifthCrew = Crew.from("다", Course.BACKEND);
         Pair newPair = Pair.of(thirdCrew, fourthCrew, fifthCrew);
 
-        assertThat(matching.pairAlreadyExists(Content.CONTENT1, newPair))
+        assertThat(matching.pairAlreadyExists(Content.CONTENT2, newPair))
                 .isTrue();
     }
 

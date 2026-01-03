@@ -49,8 +49,8 @@ class MatchingServiceTest {
                             new ArrayList<>(Arrays.asList("치수", "백호", "태웅", "태섭", "호열", "대남", "용팔", "구식", "달재")),
                             Course.BACKEND
                     );
-                    matchingService.generateMatching(Content.CONTENT1); // 첫 매칭
-                    boolean isSuccess = matchingService.generateMatching(Content.CONTENT1); // 재매칭
+                    matchingService.generateMatching(Content.CONTENT1); // 자동차경주 첫 매칭
+                    boolean isSuccess = matchingService.generateMatching(Content.CONTENT2); // 같은 레벨 미션 로또 매칭
                     assertThat(isSuccess).isFalse();
                 },
                 Arrays.asList("태웅", "달재", "백호", "호열", "대남", "치수", "태섭", "용팔", "구식"),
