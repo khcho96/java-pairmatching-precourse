@@ -3,6 +3,7 @@ package pairmatching.domain;
 import java.util.ArrayList;
 import java.util.List;
 import pairmatching.constant.Course;
+import pairmatching.constant.ErrorMessage;
 
 public class Crews {
 
@@ -11,7 +12,6 @@ public class Crews {
     private Crews() {
         this.crews = new ArrayList<>();
     }
-
 
     public static Crews newInstance() {
         return new Crews();
@@ -23,15 +23,17 @@ public class Crews {
         }
     }
 
-    public List<Crew> getBackEndCrews() {
+    public List<String> getCrewNames(Course course) {
         return new ArrayList<>(crews.stream()
-                .filter(crew -> crew.getCourse().equals(Course.BACKEND))
+                .filter(crew -> crew.getCourse().equals(course))
+                .map(Crew::getName)
                 .toList());
     }
 
-    public List<Crew> getFrontEndCrews() {
-        return new ArrayList<>(crews.stream()
-                .filter(crew -> crew.getCourse().equals(Course.FRONTEND))
-                .toList());
+    public Crew getCrew(String name) {
+        return crews.stream()
+                .filter(crew -> crew.getName().equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.INVALID_NAME.getErrorMessage()));
     }
 }

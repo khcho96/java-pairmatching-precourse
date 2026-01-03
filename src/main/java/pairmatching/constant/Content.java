@@ -45,4 +45,16 @@ public enum Content {
     private static boolean isMatch(Course course, Level level, Mission mission, Content content) {
         return content.course.equals(course) && content.level.equals(level) && content.mission.equals(mission);
     }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public Mission getMission() {
+        return mission;
+    }
 }

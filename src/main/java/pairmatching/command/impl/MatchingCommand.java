@@ -19,20 +19,28 @@ public class MatchingCommand implements Command {
 
     @Override
     public void execute() {
+        Content content;
         while (true) {
-            Content content = Retry.retryUntilSuccess(() -> InputParser.parseContent(InputView.readContent()));
+            content = Retry.retryUntilSuccess(() -> InputParser.parseContent(InputView.readContent()));
 
-            if (service.isAlreadyMatched(content)) {
-                RematchOption rematchOption = Retry.retryUntilSuccess(() -> InputParser.parseRematch(InputView.readRematch()));
-
-                if (rematchOption.equals(RematchOption.NO)) {
-                    continue;
-                }
+            if (readRematchIfAlreadyMatched(content)) {
+                continue;
             }
 
-            service.generateMaching();
+            if (service.generateMatching(content)) {
+                break;
+            }
         }
 
-        OutputView.printMatchingResult();
+        OutputView.printMatchingResult(service.getMatching(content));
+    }
+
+    private boolean readRematchIfAlreadyMatched(Content content) {
+        if (service.isAlreadyMatched(content)) {
+            RematchOption rematchOption = Retry.retryUntilSuccess(() -> InputParser.parseRematch(InputView.readRematch()));
+
+            return rematchOption.equals(RematchOption.NO);
+        }
+        return false;
     }
 }

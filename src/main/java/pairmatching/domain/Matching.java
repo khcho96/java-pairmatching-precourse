@@ -1,6 +1,7 @@
 package pairmatching.domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,5 +25,28 @@ public class Matching {
 
     public boolean isAlreadyMatched(Content content) {
         return !matching.get(content).isEmpty();
+    }
+
+    public void add(Content content, List<Pair> newPairs) {
+        matching.put(content, newPairs);
+    }
+
+    public boolean pairAlreadyExists(Content keyContent, Pair newPair) {
+        List<Content> sameLevelMatching = Arrays.stream(Content.values())
+                .filter(content -> content.getLevel().equals(keyContent.getLevel()))
+                .toList();
+
+        for (Content content : sameLevelMatching) {
+            List<Pair> pairs = matching.get(content);
+
+            return pairs.stream()
+                    .anyMatch(pair -> pair.contains(newPair));
+        }
+
+        return false;
+    }
+
+    public List<Pair> getMatching(Content content) {
+        return matching.get(content);
     }
 }
