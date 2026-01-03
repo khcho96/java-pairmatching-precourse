@@ -27,7 +27,7 @@ public class QueryCommand implements Command {
                 break;
             }
 
-            OutputView.printErrorMessage(new IllegalArgumentException(ErrorMessage.MATCHING_FAIL.getErrorMessage()));
+            OutputView.printErrorMessage(new IllegalArgumentException(ErrorMessage.MATCHING_NO_EXIST.getErrorMessage()));
         }
 
         OutputView.printMatchingResult(service.getMatching(content));

@@ -3,6 +3,7 @@ package pairmatching.command.impl;
 import pairmatching.command.Command;
 import pairmatching.command.RematchOption;
 import pairmatching.constant.Content;
+import pairmatching.constant.ErrorMessage;
 import pairmatching.service.MatchingService;
 import pairmatching.util.InputParser;
 import pairmatching.util.Retry;
@@ -30,6 +31,7 @@ public class MatchingCommand implements Command {
             if (service.generateMatching(content)) {
                 break;
             }
+            OutputView.printErrorMessage(new IllegalArgumentException(ErrorMessage.MATCHING_FAIL.getErrorMessage()));
         }
 
         OutputView.printMatchingResult(service.getMatching(content));

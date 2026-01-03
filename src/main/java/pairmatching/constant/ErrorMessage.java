@@ -10,7 +10,8 @@ public enum ErrorMessage {
 
     INVALID_NAME("없는 학생입니다."),
 
-    MATCHING_FAIL("매칭에 실패했습니다.");
+    MATCHING_FAIL("매칭에 실패했습니다."),
+    MATCHING_NO_EXIST("매칭 이력이 없습니다.");
 
     private static final String ERROR_MESSAGE_PREFIX = "[ERROR] ";
     private final String errorMessage;
