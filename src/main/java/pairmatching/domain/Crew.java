@@ -1,5 +1,6 @@
 package pairmatching.domain;
 
+import java.util.Objects;
 import pairmatching.constant.Course;
 
 public class Crew {
@@ -22,5 +23,14 @@ public class Crew {
 
     public Course getCourse() {
         return course;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Crew crew = (Crew) object;
+        return Objects.equals(name, crew.name) && course == crew.course;
     }
 }
