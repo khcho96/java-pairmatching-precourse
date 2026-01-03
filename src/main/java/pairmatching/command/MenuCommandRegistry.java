@@ -3,6 +3,7 @@ package pairmatching.command;
 import java.util.EnumMap;
 import pairmatching.command.impl.MatchingCommand;
 import pairmatching.command.impl.QueryCommand;
+import pairmatching.command.impl.ResetCommand;
 import pairmatching.service.MatchingService;
 
 public class MenuCommandRegistry {

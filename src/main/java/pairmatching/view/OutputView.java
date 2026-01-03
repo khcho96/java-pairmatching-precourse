@@ -8,6 +8,10 @@ public class OutputView {
     private OutputView() {
     }
 
+    public static void printErrorMessage(IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+    }
+
     public static void printMatchingResult(List<Pair> matching) {
         System.out.println("\n페어 매칭 결과입니다.");
 
@@ -18,7 +22,7 @@ public class OutputView {
         System.out.println();
     }
 
-    public static void printErrorMessage(IllegalArgumentException e) {
-        System.out.println(e.getMessage());
+    public static void printReset() {
+        System.out.println("초기화 되었습니다.");
     }
 }
