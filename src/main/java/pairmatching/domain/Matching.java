@@ -35,6 +35,7 @@ public class Matching {
     public boolean pairAlreadyExists(Content keyContent, Pair newPair) {
         List<Content> sameLevelMatching = Arrays.stream(Content.values())
                 .filter(content -> content.getLevel().equals(keyContent.getLevel()))
+                .filter(content -> !content.equals(keyContent))
                 .collect(Collectors.toList());
 
         for (Content content : sameLevelMatching) {
