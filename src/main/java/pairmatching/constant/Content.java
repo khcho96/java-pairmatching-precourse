@@ -35,7 +35,7 @@ public enum Content {
         this.mission = mission;
     }
 
-    public static Content fromName(Course course, Level level, Mission mission) {
+    public static Content of(Course course, Level level, Mission mission) {
         return Arrays.stream(values())
                 .filter(content -> isMatch(course, level, mission, content))
                 .findFirst()

@@ -29,7 +29,7 @@ public class Matching {
     }
 
     public void add(Content content, List<Pair> newPairs) {
-        matching.put(content, newPairs);
+        matching.put(content, new ArrayList<>(newPairs));
     }
 
     public boolean pairAlreadyExists(Content keyContent, Pair newPair) {

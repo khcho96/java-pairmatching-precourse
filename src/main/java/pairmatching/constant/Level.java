@@ -9,6 +9,7 @@ public enum Level {
     LEVEL3("레벨3"),
     LEVEL4("레벨4"),
     LEVEL5("레벨5"),
+
     NONE("");
 
     private final String name;

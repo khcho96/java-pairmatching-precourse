@@ -20,12 +20,11 @@ public final class InputParser {
         Validator.validateCsvFormat(rawInput);
 
         String[] split = rawInput.split(DELIMITER);
-
         Course course = Course.fromName(split[0].strip());
         Level level = Level.fromName(split[1].strip());
         Mission mission = Mission.of(split[2].strip(), level);
 
-        return Content.fromName(course, level, mission);
+        return Content.of(course, level, mission);
     }
 
     public static MenuOption parseMenu(String rawInput) {
