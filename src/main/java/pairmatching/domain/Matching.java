@@ -21,4 +21,8 @@ public class Matching {
         }
         return new Matching(matching);
     }
+
+    public boolean isAlreadyMatched(Content content) {
+        return !matching.get(content).isEmpty();
+    }
 }

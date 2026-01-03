@@ -1,6 +1,7 @@
 package pairmatching.service;
 
 import java.util.List;
+import pairmatching.constant.Content;
 import pairmatching.constant.Course;
 import pairmatching.domain.Crews;
 import pairmatching.domain.Matching;
@@ -17,5 +18,9 @@ public class MatchingService {
 
     public void registerFileInfo(List<String> crewNames, Course course) {
         crews.registerCrews(crewNames, course);
+    }
+
+    public boolean isAlreadyMatched(Content content) {
+        return matching.isAlreadyMatched(content);
     }
 }

@@ -1,6 +1,7 @@
 package pairmatching.command.impl;
 
 import pairmatching.command.Command;
+import pairmatching.command.RematchOption;
 import pairmatching.constant.Content;
 import pairmatching.service.MatchingService;
 import pairmatching.util.InputParser;
@@ -18,8 +19,15 @@ public class MatchingCommand implements Command {
 
     @Override
     public void execute() {
-        Content content = Retry.retryUntilSuccess(() -> InputParser.parseContent(InputView.readContent()));
+        while (true) {
+            Content content = Retry.retryUntilSuccess(() -> InputParser.parseContent(InputView.readContent()));
 
+            if (service.isAlreadyMatched(content)) {
+                RematchOption rematchOption = Retry.retryUntilSuccess(() -> InputParser.parseRematch(InputView.readRematch()));
+            }
+
+
+        }
 
         OutputView.printMatchingResult();
     }
