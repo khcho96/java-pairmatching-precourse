@@ -24,9 +24,13 @@ public class MatchingCommand implements Command {
 
             if (service.isAlreadyMatched(content)) {
                 RematchOption rematchOption = Retry.retryUntilSuccess(() -> InputParser.parseRematch(InputView.readRematch()));
+
+                if (rematchOption.equals(RematchOption.NO)) {
+                    continue;
+                }
             }
 
-
+            service.generateMaching();
         }
 
         OutputView.printMatchingResult();

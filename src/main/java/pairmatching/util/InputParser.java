@@ -1,6 +1,7 @@
 package pairmatching.util;
 
 import pairmatching.command.MenuOption;
+import pairmatching.command.RematchOption;
 import pairmatching.constant.Content;
 import pairmatching.constant.Course;
 import pairmatching.constant.Level;
@@ -29,5 +30,9 @@ public final class InputParser {
 
     public static MenuOption parseMenu(String rawInput) {
         return MenuOption.from(rawInput.strip());
+    }
+
+    public static RematchOption parseRematch(String rawInput) {
+        return RematchOption.from(rawInput.strip());
     }
 }
