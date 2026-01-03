@@ -2,6 +2,7 @@ package pairmatching.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import pairmatching.constant.Course;
@@ -12,8 +13,8 @@ class CrewsTest {
     void 크루_생성_및_과정별_크루_반환() {
         Crews crews = Crews.newInstance();
 
-        crews.registerCrews(List.of("가", "나", "다", "라", "마"), Course.BACKEND);
-        crews.registerCrews(List.of("바", "사", "아", "자", "차"), Course.FRONTEND);
+        crews.registerCrews(Arrays.asList("가", "나", "다", "라", "마"), Course.BACKEND);
+        crews.registerCrews(Arrays.asList("바", "사", "아", "자", "차"), Course.FRONTEND);
 
         List<String> backendCrews = crews.getCrewNames(Course.BACKEND);
         List<String> frontendCrews = crews.getCrewNames(Course.FRONTEND);
@@ -26,8 +27,8 @@ class CrewsTest {
     void 크루_생성_및_이름으로_크루_반환() {
         Crews crews = Crews.newInstance();
 
-        crews.registerCrews(List.of("가", "나", "다", "라", "마"), Course.BACKEND);
-        crews.registerCrews(List.of("바", "사", "아", "자", "차"), Course.FRONTEND);
+        crews.registerCrews(Arrays.asList("가", "나", "다", "라", "마"), Course.BACKEND);
+        crews.registerCrews(Arrays.asList("바", "사", "아", "자", "차"), Course.FRONTEND);
 
         Crew crew = crews.getCrew("가");
 

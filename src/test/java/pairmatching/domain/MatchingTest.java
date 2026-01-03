@@ -2,6 +2,7 @@ package pairmatching.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import pairmatching.constant.Content;
@@ -23,7 +24,7 @@ class MatchingTest {
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
 
-        matching.add(Content.CONTENT1, List.of(Pair.of(firstCrew, secondCrew)));
+        matching.add(Content.CONTENT1, Arrays.asList(Pair.of(firstCrew, secondCrew)));
 
         assertThat(matching.isAlreadyMatched(Content.CONTENT1))
                 .isTrue();
@@ -34,7 +35,7 @@ class MatchingTest {
         Matching matching = Matching.newInstance();
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
-        List<Pair> oldPairs = List.of(Pair.of(firstCrew, secondCrew));
+        List<Pair> oldPairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
         matching.add(Content.CONTENT1, oldPairs);
 
@@ -51,7 +52,7 @@ class MatchingTest {
         Matching matching = Matching.newInstance();
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
-        List<Pair> oldPairs = List.of(Pair.of(firstCrew, secondCrew));
+        List<Pair> oldPairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
         matching.add(Content.CONTENT1, oldPairs);
 
@@ -69,7 +70,7 @@ class MatchingTest {
         Matching matching = Matching.newInstance();
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
-        List<Pair> pairs = List.of(Pair.of(firstCrew, secondCrew));
+        List<Pair> pairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
         matching.add(Content.CONTENT1, pairs);
 
@@ -90,7 +91,7 @@ class MatchingTest {
         Matching matching = Matching.newInstance();
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
-        List<Pair> pairs = List.of(Pair.of(firstCrew, secondCrew));
+        List<Pair> pairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
         matching.add(Content.CONTENT1, pairs);
 

@@ -15,23 +15,23 @@ public final class InputParser {
     }
 
     public static Content parseContent(String rawInput) {
-        rawInput = rawInput.strip();
+        rawInput = rawInput.trim();
 
         Validator.validateCsvFormat(rawInput);
 
         String[] split = rawInput.split(DELIMITER);
-        Course course = Course.fromName(split[0].strip());
-        Level level = Level.fromName(split[1].strip());
-        Mission mission = Mission.of(split[2].strip(), level);
+        Course course = Course.fromName(split[0].trim());
+        Level level = Level.fromName(split[1].trim());
+        Mission mission = Mission.of(split[2].trim(), level);
 
         return Content.of(course, level, mission);
     }
 
     public static MenuOption parseMenu(String rawInput) {
-        return MenuOption.from(rawInput.strip());
+        return MenuOption.from(rawInput.trim());
     }
 
     public static RematchOption parseRematch(String rawInput) {
-        return RematchOption.from(rawInput.strip());
+        return RematchOption.from(rawInput.trim());
     }
 }

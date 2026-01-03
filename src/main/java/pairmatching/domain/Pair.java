@@ -1,6 +1,7 @@
 package pairmatching.domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,7 +14,7 @@ public class Pair {
     }
 
     public static Pair of(Crew... crews) {
-        return new Pair(new ArrayList<>(List.of(crews)));
+        return new Pair(new ArrayList<>(Arrays.asList(crews)));
     }
 
     public boolean contains(Pair newPair) {
@@ -31,9 +32,9 @@ public class Pair {
             return doublePairs;
         }
 
-        doublePairs.add(List.of(pair.get(0), pair.get(1)));
-        doublePairs.add(List.of(pair.get(0), pair.get(2)));
-        doublePairs.add(List.of(pair.get(1), pair.get(2)));
+        doublePairs.add(Arrays.asList(pair.get(0), pair.get(1)));
+        doublePairs.add(Arrays.asList(pair.get(0), pair.get(2)));
+        doublePairs.add(Arrays.asList(pair.get(1), pair.get(2)));
 
         return doublePairs;
     }

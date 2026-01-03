@@ -1,7 +1,5 @@
 package pairmatching.util.file;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +12,7 @@ public class FileReader {
     private final java.io.FileReader fr;
 
     public FileReader(String fileName) throws IOException {
-        fr = new java.io.FileReader(fileName, UTF_8);
+        fr = new java.io.FileReader(fileName);
     }
 
     public List<String> readLines() throws IOException {

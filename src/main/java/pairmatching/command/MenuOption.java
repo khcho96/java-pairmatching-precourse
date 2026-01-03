@@ -16,7 +16,7 @@ public enum MenuOption {
     }
 
     public static MenuOption from(String command) {
-        String normalized = command.strip();
+        String normalized = command.trim();
         return Arrays.stream(values())
                 .filter(opt -> opt.code.equals(normalized))
                 .findFirst()

@@ -16,7 +16,7 @@ public enum RematchOption {
     }
 
     public static RematchOption from(String command) {
-        String normalized = command.strip();
+        String normalized = command.trim();
         return Arrays.stream(values())
                 .filter(opt -> opt.command.equals(normalized))
                 .findFirst()
