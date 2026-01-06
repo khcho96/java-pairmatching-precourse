@@ -1,7 +1,6 @@
 package pairmatching.util;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import pairmatching.command.MenuOption;
@@ -17,7 +16,7 @@ class InputParserTest {
 
     @Test
     void 과정레벨미션_입력_파싱() {
-        assertThat(InputParser.parseContent(" 백엔드,  레벨1 , 자동차경주  ")).isEqualTo(Content.CONTENT1);
+        assertThat(InputParser.parseContent(" 백엔드,  레벨1 , 자동차경주  ")).isEqualTo(Content.BACKEND_LEVEL1_RACING_CAR);
     }
 
     @Test

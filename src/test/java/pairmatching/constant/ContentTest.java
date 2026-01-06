@@ -9,6 +9,6 @@ class ContentTest {
     @Test
     void 과정레벨미션_반환_정상() {
         Content content = Content.of(Course.BACKEND, Level.LEVEL1, Mission.RACING_CAR);
-        assertThat(content).isEqualTo(Content.CONTENT1);
+        assertThat(content).isEqualTo(Content.BACKEND_LEVEL1_RACING_CAR);
     }
 }

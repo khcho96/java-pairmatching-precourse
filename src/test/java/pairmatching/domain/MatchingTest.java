@@ -14,7 +14,7 @@ class MatchingTest {
     void 매칭_여부_확인_비매칭() {
         Matching matching = Matching.newInstance();
 
-        assertThat(matching.isAlreadyMatched(Content.CONTENT1))
+        assertThat(matching.isAlreadyMatched(Content.BACKEND_LEVEL1_RACING_CAR))
                 .isFalse();
     }
 
@@ -24,9 +24,9 @@ class MatchingTest {
         Crew firstCrew = Crew.from("가", Course.BACKEND);
         Crew secondCrew = Crew.from("나", Course.BACKEND);
 
-        matching.add(Content.CONTENT1, Arrays.asList(Pair.of(firstCrew, secondCrew)));
+        matching.add(Content.BACKEND_LEVEL1_RACING_CAR, Arrays.asList(Pair.of(firstCrew, secondCrew)));
 
-        assertThat(matching.isAlreadyMatched(Content.CONTENT1))
+        assertThat(matching.isAlreadyMatched(Content.BACKEND_LEVEL1_RACING_CAR))
                 .isTrue();
     }
 
@@ -37,13 +37,13 @@ class MatchingTest {
         Crew secondCrew = Crew.from("나", Course.BACKEND);
         List<Pair> oldPairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
-        matching.add(Content.CONTENT1, oldPairs);
+        matching.add(Content.BACKEND_LEVEL1_RACING_CAR, oldPairs);
 
         Crew thirdCrew = Crew.from("다", Course.BACKEND);
         Crew fourthCrew = Crew.from("라", Course.BACKEND);
         Pair newPair = Pair.of(thirdCrew, fourthCrew);
 
-        assertThat(matching.pairAlreadyExists(Content.CONTENT2, newPair))
+        assertThat(matching.pairAlreadyExists(Content.BACKEND_LEVEL1_LOTTO, newPair))
                 .isFalse();
     }
 
@@ -54,14 +54,14 @@ class MatchingTest {
         Crew secondCrew = Crew.from("나", Course.BACKEND);
         List<Pair> oldPairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
-        matching.add(Content.CONTENT1, oldPairs);
+        matching.add(Content.BACKEND_LEVEL1_RACING_CAR, oldPairs);
 
         Crew thirdCrew = Crew.from("가", Course.BACKEND);
         Crew fourthCrew = Crew.from("나", Course.BACKEND);
         Crew fifthCrew = Crew.from("다", Course.BACKEND);
         Pair newPair = Pair.of(thirdCrew, fourthCrew, fifthCrew);
 
-        assertThat(matching.pairAlreadyExists(Content.CONTENT2, newPair))
+        assertThat(matching.pairAlreadyExists(Content.BACKEND_LEVEL1_LOTTO, newPair))
                 .isTrue();
     }
 
@@ -72,9 +72,9 @@ class MatchingTest {
         Crew secondCrew = Crew.from("나", Course.BACKEND);
         List<Pair> pairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
-        matching.add(Content.CONTENT1, pairs);
+        matching.add(Content.BACKEND_LEVEL1_RACING_CAR, pairs);
 
-        assertThat(matching.getMatching(Content.CONTENT1))
+        assertThat(matching.getMatching(Content.BACKEND_LEVEL1_RACING_CAR))
                 .isNotEmpty();
     }
 
@@ -82,7 +82,7 @@ class MatchingTest {
     void 매칭_미실행_및_결과_반환() {
         Matching matching = Matching.newInstance();
 
-        assertThat(matching.getMatching(Content.CONTENT1))
+        assertThat(matching.getMatching(Content.BACKEND_LEVEL1_RACING_CAR))
                 .isEmpty();
     }
 
@@ -93,11 +93,11 @@ class MatchingTest {
         Crew secondCrew = Crew.from("나", Course.BACKEND);
         List<Pair> pairs = Arrays.asList(Pair.of(firstCrew, secondCrew));
 
-        matching.add(Content.CONTENT1, pairs);
+        matching.add(Content.BACKEND_LEVEL1_RACING_CAR, pairs);
 
         matching.reset();
 
-        assertThat(matching.getMatching(Content.CONTENT1))
+        assertThat(matching.getMatching(Content.BACKEND_LEVEL1_RACING_CAR))
                 .isEmpty();
     }
 }
