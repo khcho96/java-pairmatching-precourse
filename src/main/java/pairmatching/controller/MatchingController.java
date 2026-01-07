@@ -6,6 +6,7 @@ import pairmatching.command.MenuCommandRegistry;
 import pairmatching.command.MenuOption;
 import pairmatching.constant.Course;
 import pairmatching.service.MatchingService;
+import pairmatching.util.InputParser;
 import pairmatching.util.Retry;
 import pairmatching.util.file.FileReader;
 import pairmatching.view.InputView;
@@ -45,9 +46,8 @@ public class MatchingController {
     }
 
     private MenuOption readOption() {
-        return Retry.retryUntilSuccess(() -> {
-            String selection = InputView.readMenuSelection();
-            return MenuOption.from(selection);
-        });
+        return Retry.retryUntilSuccess(() ->
+                InputParser.parseMenu(InputView.readMenuSelection())
+        );
     }
 }
