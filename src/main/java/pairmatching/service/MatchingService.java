@@ -80,4 +80,8 @@ public class MatchingService {
     public List<Pair> getMatching(Content content) {
         return matching.getMatching(content);
     }
+
+    public void reset() {
+        matching.reset();
+    }
 }

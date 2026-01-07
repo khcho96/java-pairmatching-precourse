@@ -52,4 +52,10 @@ public class Matching {
     public List<Pair> getMatching(Content content) {
         return matching.get(content);
     }
+
+    public void reset() {
+        for (Content content : matching.keySet()) {
+            matching.get(content).clear();
+        }
+    }
 }

@@ -18,4 +18,8 @@ public class OutputView {
             System.out.println(pair);
         }
     }
+
+    public static void printReset() {
+        System.out.println("\n초기화 되었습니다.");
+    }
 }
