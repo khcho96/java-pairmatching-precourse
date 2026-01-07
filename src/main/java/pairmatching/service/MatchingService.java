@@ -67,13 +67,13 @@ public class MatchingService {
                 return true;
             }
             pairs.add(new Pair(crew1, crew2, crew3));
+            return false;
         }
 
         if (!matching.isValidPair(content, crew1, crew2)) {
             return true;
         }
         pairs.add(new Pair(crew1, crew2));
-
         return false;
     }
 

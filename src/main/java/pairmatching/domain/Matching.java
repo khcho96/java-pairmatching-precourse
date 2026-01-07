@@ -28,6 +28,10 @@ public class Matching {
                 continue;
             }
 
+            if (cont.getMission().equals(content.getMission())) {
+                continue;
+            }
+
             if (isAlreadyMatched(crews, cont)) {
                 return false;
             }
