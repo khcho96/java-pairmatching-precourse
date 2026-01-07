@@ -15,4 +15,12 @@ public class Crew {
     public static Crew of(String name, Course course) {
         return new Crew(name, course);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
 }

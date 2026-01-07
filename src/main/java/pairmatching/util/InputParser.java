@@ -5,6 +5,7 @@ import pairmatching.constant.Content;
 import pairmatching.constant.Course;
 import pairmatching.constant.Level;
 import pairmatching.constant.Mission;
+import pairmatching.constant.RematchOption;
 
 public final class InputParser {
 
@@ -28,5 +29,9 @@ public final class InputParser {
 
     public static MenuOption parseMenu(String rawInput) {
         return MenuOption.from(rawInput.trim());
+    }
+
+    public static RematchOption parseRematch(String rawInput) {
+        return RematchOption.from(rawInput.trim());
     }
 }

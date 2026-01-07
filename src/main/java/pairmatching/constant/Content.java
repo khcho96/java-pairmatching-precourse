@@ -40,4 +40,16 @@ public enum Content {
                 .findFirst()
                 .orElse(NONE);
     }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public Mission getMission() {
+        return mission;
+    }
 }

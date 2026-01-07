@@ -36,11 +36,11 @@ public class MatchingController {
     }
 
     private void registerFileInfo() throws IOException {
-        FileReader fileReader = new FileReader("src/main/resources/backend-crew");
+        FileReader fileReader = new FileReader("src/main/resources/backend-crew.md");
         List<String> readLines = fileReader.readLines();
         service.registerFileInfo(readLines, Course.BACKEND);
 
-        fileReader = new FileReader("src/main/resources/frontend-crew");
+        fileReader = new FileReader("src/main/resources/frontend-crew.md");
         readLines = fileReader.readLines();
         service.registerFileInfo(readLines, Course.FRONTEND);
     }
