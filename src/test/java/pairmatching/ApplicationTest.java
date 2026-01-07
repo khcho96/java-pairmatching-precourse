@@ -7,7 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
-import pairmatching.Application;
 
 class ApplicationTest extends NsTest {
 
@@ -31,6 +30,17 @@ class ApplicationTest extends NsTest {
                 runException("1", "백엔드, 레벨1, 오징어게임");
                 assertThat(output()).contains(ERROR_MESSAGE);
             }
+        );
+    }
+
+    @Test
+    void 홀수_인원_페어_매칭() {
+        assertShuffleTest(
+                () -> {
+                    run("1", "백엔드, 레벨1, 자동차경주", "Q");
+                    assertThat(output()).contains("태웅 : 백호", "치수 : 태섭 : 소연");
+                },
+                Arrays.asList("태웅", "백호", "치수", "태섭", "소연")
         );
     }
 
